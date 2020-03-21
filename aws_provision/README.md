@@ -7,13 +7,13 @@
 3. Go to the Identity Access Management (IAM) and create a new user with admin rights. Ansible will create cloud resources through this user.
 
 	- IAM / Users / Add Users
-  - Click programmatic access
-  - Click AWS Management Console Access
-  - Set up a custom password
-  - Next permissions
-  - Create a new group called Admin
-  - Attach AdministratorAccess to the group and click Create
-  - Download the access key-pair generated for the user (access key ID and secret access key)
+	- Click programmatic access
+	- Click AWS Management Console Access
+	- Set up a custom password
+	- Next permissions
+	- Create a new group called Admin
+	- Attach AdministratorAccess to the group and click Create
+	- Download the access key-pair generated for the user (access key ID and secret access key)
   
 4. 
 
