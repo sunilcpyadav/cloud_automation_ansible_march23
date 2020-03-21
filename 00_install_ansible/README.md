@@ -1,6 +1,6 @@
-* How to install Ansible
+# How to install Ansible
 
-** On Windowns
+## On Windowns
 
 1. Install WSL 2 (Windows Subsystem for Linux)
 	
@@ -20,7 +20,7 @@
 	$ sudo apt install ansible	
 	```
 	
-** On OS X
+## On OS X
 
 The preferred way to install Ansible on a Mac is with pip.
 
