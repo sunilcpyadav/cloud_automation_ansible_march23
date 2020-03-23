@@ -1,0 +1,33 @@
+ubuntu@ip-10-0-1-96:~/ansible$ ansible --list-hosts loadbalancers
+  hosts (3):
+    lb01
+    lb02
+    lb03
+ubuntu@ip-10-0-1-96:~/ansible$ ansible --list-hosts "app*"
+  hosts (10):
+    app01
+    app02
+    app03
+    app04
+    app05
+    app06
+    app07
+    app08
+    app09
+    app10
+ubuntu@ip-10-0-1-96:~/ansible$ ansible --list-hosts loadbalancers:appservers
+  hosts (13):
+    lb01
+    lb02
+    lb03
+    app01
+    app02
+    app03
+    app04
+    app05
+    app06
+    app07
+    app08
+    app09
+    app10
+
