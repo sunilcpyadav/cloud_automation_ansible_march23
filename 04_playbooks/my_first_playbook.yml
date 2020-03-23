@@ -1,0 +1,16 @@
+# 1. Copy our /etc/motd file
+# 2. Install ntpdate with apt
+---
+- hosts: server1
+  become: true
+
+  tasks:
+    # 1. Copy our /etc/motd file
+    - name: Copy my motd message
+      copy: src=./my-message.txt dest=/etc/motd
+
+#    # 2. Install ntpdate with apt
+    - name: install nptdate
+      apt: name=ntpdate update_cache=yes state=present
+
+

@@ -1,0 +1,11 @@
+---
+- hosts: server1
+  become: true
+
+  tasks:
+    - name: "Remove ntpdate"
+      # apt: name=ntpdate update_cache=yes state=absent
+      apt:
+        name: ntpdate
+        update_cache: yes
+        state: absent

@@ -1,0 +1,13 @@
+---
+- hosts: server1
+  become: true
+
+  tasks:
+    - name: install nginx
+      apt: name=nginx update_cache=yes state=present
+
+- hosts: control
+  become: true
+  tasks:
+    - name: install curl
+      apt: name=curl update_cache=yes state=present
