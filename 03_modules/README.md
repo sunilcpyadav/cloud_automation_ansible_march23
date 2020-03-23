@@ -32,6 +32,6 @@ Command: https://docs.ansible.com/ansible/latest/modules/command_module.html
 Copy command:
 
 ```bash
-ansible -m copy -a "src=... dest=..." all
+ansible -m copy -a "src=./my-message.txt dest=/etc/motd" all
 ```
 
