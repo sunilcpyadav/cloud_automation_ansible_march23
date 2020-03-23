@@ -28,3 +28,10 @@ Shell: https://docs.ansible.com/ansible/latest/modules/shell_module.html
 Raw: https://docs.ansible.com/ansible/latest/modules/raw_module.html (does not require python to be installed on target)
 
 Command: https://docs.ansible.com/ansible/latest/modules/command_module.html
+
+Copy command:
+
+```bash
+ansible -m copy -a "src=... dest=..." all
+```
+
