@@ -29,8 +29,6 @@ $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 $ python get-pip.py --user
 
 $ pip install --user ansible
-
-$ pip install --user git+https://github.com/ansible/ansible.git@devel
 ```
 
 Documentation page: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#from-pip
