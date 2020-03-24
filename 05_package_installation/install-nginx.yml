@@ -1,63 +1,13 @@
 # what needs to be installed: nginx
 ---
 - hosts: loadbalancers
-
-
-===================
-
-value types: 
-  - single values: 12, Hello world!
-  - dictionary:
-      a: 1
-      b: 2
-      c: H823haskda2
-  - list:
-      - a
-      - b
-      - c
-    Note that: all elements in list has the same type!
-
-a: 1
-b: 2
-c: 3
-numbers:
-  - 1
-  - 2
-  - 3
-  - 4
-# list of dictionaries
-
-ansible playlist [ dict, dict, dict, dict ]
-where each dict: host selection + list of tasks
-  where the lists of tasks: list of dictionaries
-    where each dict: task definition
-
-- hosts: control
-  tasks: # list of dictinaries
-    - name: task1
-      [ module name ]: args
-      # string
-      apt: name=nginx status=present
-
-    - name: task2
-      # dictionary
+  become: true
+  tasks:
+    - name: install nginx
       apt:
-        name: nginx 
+        name: nginx
         status: present
-        ...
-    - apt:    
+        update_cache: yes
 
-- hosts: webservers
-  tasks: # list of dictinaries
-    - name: task1
-      [ module name ]: args
-      # string
-      apt: name=nginx status=present
-
-    - name: task2
-      # dictionary
-      apt:
-        name: nginx 
-        status: present
-        ...
-
+#- hosts: control
+#
