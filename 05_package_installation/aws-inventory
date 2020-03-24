@@ -9,4 +9,5 @@ ip-10-0-1-43.us-east-2.compute.internal ansible_host=18.224.43.77
 localhost ansible_connection=local
 [all:vars]
 ansible_user=ubuntu
-ansible_ssh_private_key_file=./course_aws_privatekey.pem
+ansible_ssh_private_key_file=./aws-keys.pem
+

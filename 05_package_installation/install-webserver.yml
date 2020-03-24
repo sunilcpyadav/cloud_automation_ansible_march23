@@ -1,0 +1,8 @@
+# packages to be installed:
+# 1. apache2
+# 2. libapache2-mod-wsgi
+# 3. python-pip
+# 4. python-virtualenv
+
+---
+hosts: webservers
