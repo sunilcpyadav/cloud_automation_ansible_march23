@@ -1,0 +1,16 @@
+# 1. check if the service is running
+# 2. check if someone is listenning on a port 80/3306
+---
+- hosts: loadbalancers
+  gather_facts: no
+  become: true
+  tasks:
+    - name: verify nginx service (is it running?)
+      command: service nginx status
+      changed_when: false
+
+    - name: verify if nginx is listenning on port 80
+      wait_for: port=80 state=present timeout=1
+
+# -hosts: webservers
+# -hosts: databases
