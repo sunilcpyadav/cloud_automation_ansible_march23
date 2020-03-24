@@ -20,3 +20,5 @@
         - python-pip
         - python-virtualenv
 
+    - name: ensure apache2 is running
+      service: name=apache2 state=started enabled=yes

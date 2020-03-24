@@ -1,0 +1,36 @@
+# Restart sequence:
+# 1. stop nginx
+# 2. stop application servers (apache2)
+# 3-4. restart mysql
+# 5. start apache2
+# 6. start nginx
+---
+- hosts: loadbalancers
+  become: true
+  tasks:
+    - name: stop nginx
+      service: name=nginx state=stopped
+
+- hosts: webservers
+  become: true
+  tasks:
+    - name: stop apache2
+      service: name=apache2 state=stopped
+
+- hosts: databases
+  become: true
+  tasks:
+    - name: restart mysql
+      service: name=mysql state=restarted
+
+- hosts: webservers
+  become: true
+  tasks:
+    - name: stop apache2
+      service: name=apache2 state=started
+
+- hosts: loadbalancers
+  become: true
+  tasks:
+    - name: stop nginx
+      service: name=nginx state=started

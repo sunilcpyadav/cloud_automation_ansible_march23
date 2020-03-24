@@ -1,10 +1,10 @@
 [loadbalancers]
-ip-10-0-1-185.us-east-2.compute.internal ansible_host=52.14.162.130
+ip-10-0-1-150.us-east-2.compute.internal ansible_host=18.191.132.52
 [databases]
-ip-10-0-1-88.us-east-2.compute.internal ansible_host=3.12.163.115
+ip-10-0-1-203.us-east-2.compute.internal ansible_host=18.224.56.201
 [webservers]
-ip-10-0-1-182.us-east-2.compute.internal ansible_host=18.189.170.185
-ip-10-0-1-247.us-east-2.compute.internal ansible_host=3.21.97.192
+ip-10-0-1-78.us-east-2.compute.internal ansible_host=3.133.142.7
+ip-10-0-1-253.us-east-2.compute.internal ansible_host=18.189.193.96
 [control]
 localhost ansible_connection=local
 [all:vars]
