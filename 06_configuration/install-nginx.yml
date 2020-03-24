@@ -8,6 +8,7 @@
         name: nginx
         state: present
         update_cache: yes
+      tags: installation
 
     - name: make sure nginx is running
       # service: name=nginx state=started enabled=yes
@@ -15,6 +16,7 @@
         name: nginx
         state: started
         enabled: yes
+      tags: maintenance
 
     - name: configure nginx
       template:
@@ -22,7 +24,23 @@
         dest: /etc/nginx/sites-available/demo
         mode: 0644
       notify: restart_nginx
-    
+      tags: configuration
+
+    - name: activate demo nginx site
+      file:
+        src: /etc/nginx/sites-available/demo
+        dest: /etc/nginx/sites-enabled/demo
+        state: link
+      notify: restart_nginx
+      tags: configuration
+
+    - name: deactivate default nginx site
+      file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
+      notify: restart_nginx
+      tags: configuration
+
   handlers:
     - name: restart_nginx
       service:
