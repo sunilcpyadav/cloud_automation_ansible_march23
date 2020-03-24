@@ -1,0 +1,26 @@
+# to be installed: mysql-server
+# 1. configure => 
+# 2. create database
+# 3. create database user
+---
+- hosts: databases
+  become: true
+  tasks:
+    - name: install mysql server
+      apt: name=mysql-server state=present update_cache=yes
+
+    - name: ensure mysql is running
+      service: name=mysql state=started enabled=yes
+
+    - name: replace interface configuration in mysql conf
+      lineinfile:
+        dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+        regexp: ^bind-address
+        line: "bind-address = 0.0.0.0"
+      notify: restart_mysql
+      
+  handlers:
+    - name: restart_mysql
+      service: name=mysql state=restarted
+
+    
