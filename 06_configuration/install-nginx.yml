@@ -1,0 +1,31 @@
+# what needs to be installed: nginx
+---
+- hosts: loadbalancers
+  become: true
+  tasks:
+    - name: install nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: make sure nginx is running
+      # service: name=nginx state=started enabled=yes
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: configure nginx
+      template:
+        src: templates/nginx.conf.j2
+        dest: /etc/nginx/sites-available/demo
+        mode: 0644
+      notify: restart_nginx
+    
+  handlers:
+    - name: restart_nginx
+      service:
+        name: nginx
+        state: restarted
+      
