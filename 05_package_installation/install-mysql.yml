@@ -1,3 +1,7 @@
 # to be installed: mysql-server
 ---
-hosts: databases
+- hosts: databases
+  become: true
+  tasks:
+    - name: install mysql server
+      apt: name=mysql-server state=present update_cache=yes

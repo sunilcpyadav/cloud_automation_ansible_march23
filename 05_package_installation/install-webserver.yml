@@ -5,4 +5,18 @@
 # 4. python-virtualenv
 
 ---
-hosts: webservers
+- hosts: webservers
+  become: true
+  tasks:
+    - name: install software packages for webserver
+      apt: name={{item}} state=present update_cache=yes
+      with_items:
+        - apache2
+        - libapache2-mod-wsgi
+        - python-pip
+        - python-virtualenv
+
+####
+# apt: name=apache2 ...
+# apt: name=libapache2-...
+# ...

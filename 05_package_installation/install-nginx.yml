@@ -6,8 +6,5 @@
     - name: install nginx
       apt:
         name: nginx
-        status: present
+        state: present
         update_cache: yes
-
-#- hosts: control
-#
