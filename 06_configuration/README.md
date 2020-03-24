@@ -10,5 +10,5 @@ ansible-playbook playbook.yml --tags tag_name
 Specify hosts (or groups) where you want to execute your playbook (restirct hosts:):
 
 ```bash
-ansible-playbook playbook.yml --list hostname
+ansible-playbook playbook.yml --limit hostname
 ```
