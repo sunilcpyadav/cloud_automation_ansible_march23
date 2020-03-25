@@ -1,7 +1,7 @@
 [loadbalancers]
 ip-10-0-1-150.us-east-2.compute.internal ansible_host=18.191.132.52
 [databases]
-ip-10-0-1-203.us-east-2.compute.internal ansible_host=18.224.56.201
+ip-10-0-1-225.us-east-2.compute.internal ansible_host=18.220.193.246
 [webservers]
 ip-10-0-1-78.us-east-2.compute.internal ansible_host=3.133.142.7
 ip-10-0-1-253.us-east-2.compute.internal ansible_host=18.189.193.96
